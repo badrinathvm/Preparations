@@ -18,7 +18,7 @@ class RotateArray
         temp = arr[0];
         for (i = 0; i < n-1; i++)
             arr[i] = arr[i + 1];
-        System.out.print("Data is "+ i);
+        //System.out.print("Data is "+ i);
         arr[i] = temp;
     }
 

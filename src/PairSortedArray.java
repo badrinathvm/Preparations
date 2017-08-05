@@ -13,6 +13,8 @@ public class PairSortedArray {
 
     static Boolean pairInSortedRotated(int arr[], int n, int x)
     {
+
+
         // Find the pivot element
         int i;
         for (i=0; i<n-1; i++)
@@ -25,8 +27,9 @@ public class PairSortedArray {
         while (l != r)
         {
             // If we find a pair with sum x, we return true
-            if (arr[l] + arr[r] == x)
+            if (arr[l] + arr[r] == x) {
                 return true;
+            }
 
             // If current pair sum is less, move to the higher sum
             if (arr[l] + arr[r] < x)
@@ -34,6 +37,10 @@ public class PairSortedArray {
             else  // Move to the lower sum side
                 r = (n + r - 1)%n;
         }
+
+
+
+
         return false;
     }
 }

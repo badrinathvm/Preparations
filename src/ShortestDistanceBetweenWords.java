@@ -4,8 +4,12 @@
 public class ShortestDistanceBetweenWords {
 
     public static void main(String[] args) {
-        String w = "hello ho are you";
-        System.out.println(ShortestDistanceBetweenWords.shortestDistance(w,"hello","you"));
+        String w = "practice makes perfect coding makes";
+        //System.out.println(ShortestDistanceBetweenWords.shortestDistance(w,"makes","coding"));
+
+        String words[] = {"practice", "makes", "perfect", "coding", "makes"};
+
+        System.out.println(ShortestDistanceBetweenWords.shortestWordDistanceSame(words,"practice" ,"coding"));
     }
 
 
@@ -15,7 +19,15 @@ public class ShortestDistanceBetweenWords {
         int minDistance=Integer.MAX_VALUE;
         String[] aS=str.toLowerCase().split("[ \t]+");
         int i=0;
+
+        boolean isSame;
+
+        if(a.equals(b)){
+            isSame = true;
+        }
+
         for(String t:aS){
+
             if(t.equals(a)){
                 aIndex=i;
             }
@@ -34,4 +46,53 @@ public class ShortestDistanceBetweenWords {
         else
             return minDistance;
     }
+
+
+
+    public static int shortestWordDistanceSame(String[] words, String word1, String word2) {
+
+        if(words==null||words.length==0)
+            return -1;
+
+        if(word1==null || word2==null)
+            return -1;
+
+        boolean isSame = false;
+
+        if(word1.equals(word2))
+            isSame = true;
+
+        int minDistance= Integer.MAX_VALUE;
+
+        int prev=-1;
+        int p1=-1;
+        int p2=-1;
+
+        for(int i=0; i<words.length; i++){
+            if(isSame){
+                if(words[i].equals(word1)){
+                    if(prev!=-1){
+                        minDistance=Math.min(minDistance, i-prev);
+                    }
+                    prev = i;
+                }
+            }else{
+                if(word1.equals(words[i])){
+                    p1=i;
+                    if(p2!=-1){
+                        minDistance = Math.min(minDistance, i-p2);
+                    }
+                }else if(word2.equals(words[i])){
+                    p2=i;
+                    if(p1!=-1){
+                        minDistance = Math.min(minDistance, i-p1);
+                    }
+                }
+            }
+        }
+
+        return minDistance;
+    }
+
+
 }

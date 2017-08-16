@@ -13,12 +13,13 @@ public class FirstMissingPositive {
             // Start typing your Java solution below
             // DO NOT write main() function
             int n=A.length;
-            System.out.println(n);
+            //System.out.println(n);
             for(int i=0;i<n;i++){
                 if(A[i]>0&&A[i]<=n){
-                    if(A[i]-1!=i&&A[A[i]-1]!=A[i]){
-                        int temp=A[A[i]-1];
-                        A[A[i]-1]=A[i];
+                    int val = A[i]-1;
+                    if(val!=i && A[val]!=A[i]){
+                        int temp=A[val];
+                        A[val]=A[i];
                         A[i]=temp;
                         i--;
                     }

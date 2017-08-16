@@ -4,22 +4,22 @@
 public class PairSortedArray {
 
     public static void main(String[] args) {
-            int arr[] = {11, 15, 6, 8, 9, 10};
+            int arr[] = {1,10,3,4,6};
             int sum = 14;
             int n = arr.length;
-        System.out.println(PairSortedArray.pairInSortedRotated(arr,n,14));
+        System.out.println(PairSortedArray.pairInSortedRotated(arr,n,7));
     }
 
 
     static Boolean pairInSortedRotated(int arr[], int n, int x)
     {
-
-
         // Find the pivot element
         int i;
-        for (i=0; i<n-1; i++)
-            if (arr[i] > arr[i+1])
+        for (i=0; i<n-1; i++) {
+            if (arr[i] > arr[i + 1])
                 break;
+        }
+
         int l = (i+1)%n;  // l is now index of minimum element
         int r = i;        // r is now index of maximum element
 
@@ -37,9 +37,6 @@ public class PairSortedArray {
             else  // Move to the lower sum side
                 r = (n + r - 1)%n;
         }
-
-
-
 
         return false;
     }

@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class ThirdMaximum {
 
     public static void main(String[] args) {
-        System.out.println(ThirdMaximum.thirdMax(new int[] {3,2,10,0}));
+        System.out.println(ThirdMaximum.thirdMax(new int[] {1,2,3}));
     }
 
 
@@ -19,6 +19,7 @@ public class ThirdMaximum {
                 set.remove(set.first());
             }
         }
+        System.out.println(set.first());
         return set.size() < 3 ? set.last() : set.first();
     }
 }

@@ -1,10 +1,14 @@
 /**
  * Created by Badri on 7/21/17.
  */
-public class LongestPalindrome {
+public class Palindromes {
 
     public static void main(String[] args) {
-        System.out.println(LongestPalindrome.LongestPalindrome("aba"));
+
+
+        System.out.println(Palindromes.LongestPalindrome("aba"));
+        System.out.println(Palindromes.shortestPalindrome("abcd"));
+
     }
 
     public static String LongestPalindrome(String s) {
@@ -27,5 +31,25 @@ public class LongestPalindrome {
         }
         System.out.println(max);
         return  longestPalin.toString();
+    }
+
+    public static String shortestPalindrome(String s){
+        if(s == null || s.length() == 0) return null;
+        if(s.length() == 1) return s;
+
+        int i = 0;
+        int j = s.length()-1;
+
+        while(j>=0){
+            if (s.charAt(i) == s.charAt(j)){
+                i++;
+            }
+            j--;
+        }
+
+        String suffix = s.substring(i);
+        String prefix = new StringBuilder(suffix).reverse().toString();
+        String mid = shortestPalindrome(s.substring(0, i));
+        return prefix+mid+suffix;
     }
 }

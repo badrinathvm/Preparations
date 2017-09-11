@@ -1,6 +1,5 @@
 package src;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +18,7 @@ public class SingleNumber {
 
         HashMap<Integer,Integer> map = new HashMap<>();
 
-        for ( int i =0 ; i< arr.length;i++){
+        for( int i =0 ; i< arr.length;i++){
             if(map.containsKey(arr[i])){
                 //map.get(arr[i]).
                 map.put(arr[i],map.get(arr[i])+1);

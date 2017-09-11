@@ -14,14 +14,22 @@ public class CoinChange {
             temp[i][0] = 1;
         }
         for(int i=1; i <= coins.length; i++){
-            for(int j=1; j <= total ; j++){
-                if(coins[i-1] > j){
-                    temp[i][j] = temp[i-1][j];
-                }
-                else{
-                    temp[i][j] = temp[i][j-coins[i-1]] + temp[i-1][j];
+            for(int j=1; j <= total ; j++) {
+                if (coins[i - 1] > j) {
+                    temp[i][j] = temp[i - 1][j];
+                } else {
+                    temp[i][j] = temp[i][j - coins[i - 1]] + temp[i - 1][j];
                 }
             }
+
+
+//                if(j>=coins[i]){
+//                    temp[i][j] = temp[i-1][j]+ temp[i][j-coins[i]];
+//                }else
+//                    temp[i][j] = temp[i-1][j];
+//                }
+
+
 
              /* if ( coins[i-1] > j){
                   temp[i][j] = Math.min(temp[i-1][j] ,1+temp[i][j-coins[i-1]]);
@@ -59,8 +67,8 @@ public class CoinChange {
 
     public static void main(String args[]){
         CoinChange cc = new CoinChange();
-        int total = 15;
-        int coins[] = {3,4,6,7,9};
+        int total = 4;
+        int coins[] = {1,2,3};
         System.out.println(cc.numberOfSolutions(total, coins));
         //System.out.println(cc.numberOfSolutionsOnSpace(total, coins));
         cc.printCoinChangingSolution(total, coins);

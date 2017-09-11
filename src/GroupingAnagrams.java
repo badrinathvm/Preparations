@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Badri on 7/8/17.
@@ -16,6 +14,8 @@ public class GroupingAnagrams {
     public static List<List<String>> getAnagramas(String str[]){
 
         List<List<String>> result = new ArrayList<List<String>>();
+
+        List<String> finalList = new ArrayList<>();
 
         HashMap<String,ArrayList<String>> map = new HashMap<String,ArrayList<String>>();
 
@@ -39,7 +39,17 @@ public class GroupingAnagrams {
             }
         }
 
+        //result.addAll(map.keySet());
         result.addAll(map.values());
+
+        for ( Collection s : map.values()){
+                Iterator i = s.iterator();
+                while(i.hasNext()){
+                    finalList.add(i.next().toString());
+                }
+        }
+
+        System.out.println(finalList);
         return result;
     }
 }

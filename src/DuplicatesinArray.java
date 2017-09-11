@@ -15,10 +15,16 @@ class DuplicatesinArray
 
                 int index =  Math.abs(arr[i])-1;
 
-                if( arr[index] < 0){
-                   res.add(index+1);
-                }else{
+//                if( arr[index] < 0){
+//                   res.add(index+1);
+//                }else{
+//                    arr[index] = -arr[index];
+//                }
+
+                if( arr[index] > 0){
                     arr[index] = -arr[index];
+                }else{
+                 res.add(index+1);
                 }
             }
 
@@ -32,6 +38,7 @@ class DuplicatesinArray
         DuplicatesinArray duplicate = new DuplicatesinArray();
         //int arr[] = {4, 2, 4, 5, 2, 3, 1};
         int arr[] = {4, 3, 2, 7, 8, 2,3, 1};
+        //int arr[] = {1,1,2,3};
         int arr_size = arr.length;
         duplicate.printRepeat(arr, arr_size);
     }

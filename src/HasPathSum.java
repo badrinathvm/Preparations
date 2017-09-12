@@ -1,5 +1,3 @@
-package src;
-
 /**
  * Created by m785451 on 9/11/17.
  */
@@ -7,12 +5,12 @@ package src;
 
 
 // * Definition for a binary tree node.
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
+  class TreeNode {
+      int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode(int x) { val = x; }
+  }
 
 
 public class HasPathSum {
@@ -40,6 +38,30 @@ public class HasPathSum {
 
         return hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);
 
+    }
+
+    public static TreeNode invertTree(TreeNode root){
+        if(root != null){
+            helper(root);
+        }
+
+        return root;
+    }
+
+    public static void helper(TreeNode p){
+
+        //exchange
+        TreeNode temp = p.left;
+        p.left = p.right;
+        p.right = temp;
+
+        if(p.left!= null){
+            helper(p.left);
+        }
+
+        if(p.right!=null){
+            helper(p.right);
+        }
     }
 
 }

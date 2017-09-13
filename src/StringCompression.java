@@ -5,6 +5,11 @@ public class StringCompression {
 
     public static void main(String[] args) {
         System.out.println(StringCompression.compress("a"));
+
+        String s = "LeeteCode";
+        s= s.replaceAll("[e]{2,}","");
+        System.out.println(s);
+
     }
 
     public static String compress(String str){

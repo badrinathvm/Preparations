@@ -4,7 +4,7 @@
 public class StringCompression {
 
     public static void main(String[] args) {
-        System.out.println(StringCompression.compress("a"));
+        System.out.println(StringCompression.compress("aabccccaaa"));
 
         String s = "LeeteCode";
         s= s.replaceAll("[e]{2,}","");

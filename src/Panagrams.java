@@ -15,7 +15,7 @@ public class Panagrams {
 
         for ( int i =0 ; i<26; i++){
             flag = 0;
-             for (int j =0; j<str.length();i++){
+             for (int j =0; j<str.length();j++){
                  if(str.charAt(j) == 97+i){
                      flag =1;
                      break;

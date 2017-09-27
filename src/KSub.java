@@ -28,7 +28,8 @@ public class KSub {
         }
 
 
-        return  Character.toString((char) s.charAt(4));
+        return 0;
+        //return  Character.toString((char) s.charAt(4));
     }
 
     public static int[] SubArraySumModK(final int A[], final int K) {

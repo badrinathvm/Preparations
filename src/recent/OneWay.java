@@ -15,8 +15,6 @@ public class OneWay {
 
         System.out.println(OneWay.oneWay("pale","abe")); //false
 
-
-
     }
 
 
